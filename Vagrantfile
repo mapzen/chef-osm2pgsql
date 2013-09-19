@@ -70,6 +70,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.data_bags_path = "data_bags"
+
+    # install_type 'package' doesn't work with vagrant at present
     chef.json = {
       "osm2pgsql" => {
         "install_type" => "source"
