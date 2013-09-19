@@ -19,6 +19,7 @@ when 'source'
       ./configure
       make && make install
     EOH
+    not_if 'test -f /usr/local/bin/osm2pgsql'
   end
 
 when 'package'
@@ -30,6 +31,7 @@ when 'package'
       dpkg-buildpackage
       dpkg -i ../osm2pgsql*.deb
     EOH
+    not_if 'dpkg -l osm2pgsql'
   end
 end
 
@@ -40,6 +42,5 @@ git 'osm2pgsql' do
   action :sync
   destination '/opt/osm2pgsql'
   notifies :run, "bash[build_osm2pgsql]"
-  not_if 'test -d /opt/osm2pgsql'
 end
 
