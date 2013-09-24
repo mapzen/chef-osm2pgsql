@@ -9,7 +9,18 @@
 
 include_recipe 'apt'
 
-%w(build-essential libxml2-dev libgeos++-dev libpq-dev libbz2-dev libtool automake libprotobuf-c0-dev protobuf-c-compiler dh-make).each do |p|
+%w(
+	build-essential
+	libxml2-dev
+	libgeos++-dev
+	libpq-dev
+	libbz2-dev
+	libtool
+	automake
+	libprotobuf-c0-dev
+	protobuf-c-compiler
+	dh-make
+).each do |p|
   package p do
     action :install
   end
