@@ -2,7 +2,7 @@
 # Cookbook Name:: osm2pgsql
 # Recipe:: packages
 #
-# Copyright 2013, YOUR_COMPANY_NAME
+# Copyright 2013, Mapzen
 #
 # All rights reserved - Do Not Redistribute
 #
