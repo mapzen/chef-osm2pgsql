@@ -14,12 +14,13 @@ when 'source'
   bash 'build_osm2pgsql' do
     action :nothing
     cwd '/opt/osm2pgsql'
+    environment {"PREFIX" => "/usr"}
     code <<-EOH
       ./autogen.sh
       ./configure
       make && make install
     EOH
-    not_if 'test -f /usr/local/bin/osm2pgsql'
+    not_if 'test -f /usr/bin/osm2pgsql'
   end
 
 when 'package'
