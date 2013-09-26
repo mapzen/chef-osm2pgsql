@@ -14,7 +14,7 @@ when 'source'
   bash 'build_osm2pgsql' do
     action :nothing
     cwd '/opt/osm2pgsql'
-    environment {"PREFIX" => "/usr"}
+    environment 'PREFIX' => '/usr'
     code <<-EOH
       ./autogen.sh
       ./configure
