@@ -1,10 +1,10 @@
 name             'osm2pgsql'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Mapzen'
+maintainer_email 'grant@mapzen.com'
 license          'All rights reserved'
 description      'Installs/Configures osm2pgsql'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.4.2'
+version          '0.4.3'
 
 %w{ apt git }.each do |dep|
     depends dep
