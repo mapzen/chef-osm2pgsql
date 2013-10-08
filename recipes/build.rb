@@ -42,6 +42,6 @@ git 'osm2pgsql' do
   #reference node[:app_name][:git_revision]
   action :sync
   destination '/opt/osm2pgsql'
-  notifies :run, "bash[build_osm2pgsql]"
+  notifies :run, "bash[build_osm2pgsql]", :immediately
 end
 
