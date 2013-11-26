@@ -18,7 +18,7 @@ when 'source'
     code <<-EOH
       ./autogen.sh
       ./configure --prefix=#{node[:osm2pgsql][:source_install_prefix]}
-      make && make install
+      make -j "#{node[:cpu][:total]}" && make install
     EOH
     not_if "test -f #{node[:osm2pgsql][:source_install_prefix]}/bin/osm2pgsql"
   end
