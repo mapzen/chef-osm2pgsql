@@ -13,4 +13,3 @@ when 'pkg'
 when 'source'
   include_recipe 'osm2pgsql::install_source'
 end
-

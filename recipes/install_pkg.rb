@@ -8,4 +8,3 @@
 #
 
 package 'osm2pgsql'
-
