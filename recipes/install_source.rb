@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: osm2pgsql
-# Recipe:: build
+# Recipe:: install_source
 #
 # Copyright 2013, Mapzen
 #
@@ -13,7 +13,7 @@ include_recipe 'osm2pgsql::packages'
 bash 'build_osm2pgsql' do
   action :nothing
   cwd '/opt/osm2pgsql'
-  environment 'PREFIX' => "#{node[:osm2pgsql][:source_install_prefix]}"
+  environment 'PREFIX' => node[:osm2pgsql][:source_install_prefix]
   code <<-EOH
     ./autogen.sh
     ./configure --prefix=#{node[:osm2pgsql][:source_install_prefix]}
@@ -23,9 +23,9 @@ bash 'build_osm2pgsql' do
 end
 
 git 'osm2pgsql' do
-  repository 'https://github.com/openstreetmap/osm2pgsql.git'
-  reference 'master'
-  action :sync
+  action      :sync
+  reference   'master'
+  repository  'https://github.com/openstreetmap/osm2pgsql.git'
   destination '/opt/osm2pgsql'
-  notifies :run, 'bash[build_osm2pgsql]', :immediately
+  notifies    :run, 'bash[build_osm2pgsql]', :immediately
 end
