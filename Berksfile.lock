@@ -16,10 +16,10 @@
       "locked_version": "1.4.2"
     },
     "yum": {
-      "locked_version": "3.0.6"
+      "locked_version": "3.1.0"
     },
     "windows": {
-      "locked_version": "1.12.8"
+      "locked_version": "1.30.0"
     },
     "chef_handler": {
       "locked_version": "1.1.4"
@@ -28,7 +28,7 @@
       "locked_version": "1.5.10"
     },
     "yum-epel": {
-      "locked_version": "0.2.0"
+      "locked_version": "0.3.2"
     }
   }
 }
