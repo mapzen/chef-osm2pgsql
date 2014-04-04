@@ -1,5 +1,6 @@
 osm2pgsql Chef Cookbook
 ===================
+
 Chef cookbook to install osm2pgsql
 
 Current Build Status
