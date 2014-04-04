@@ -2,10 +2,6 @@
 # Cookbook Name:: osm2pgsql
 # Recipe:: install_source
 #
-# Copyright 2013, Mapzen
-#
-# All rights reserved - Do Not Redistribute
-#
 
 include_recipe 'git'
 include_recipe 'osm2pgsql::packages'
