@@ -1,3 +1,6 @@
-osm2pgsql CHANGELOG
-===================
+CHANGELOG
+=========
 
+0.4.4
+-----
+* stable
