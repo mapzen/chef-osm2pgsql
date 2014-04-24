@@ -1,11 +1,6 @@
 osm2pgsql Chef Cookbook
 ===================
-
-Chef cookbook to install osm2pgsql
-
-Current Build Status
---------------------
-[![Build Status](https://secure.travis-ci.org/mapzen/chef-osm2pgsql.png)](http://travis-ci.org/mapzen/chef-osm2pgsql)
+![Build Status](https://circleci.com/gh/mapzen/chef-osm2pgsql.png?circle-token=a888977344413f7c0bdae977465f4ad5da0db390)
 
 Description
 -----------
@@ -15,4 +10,3 @@ Installs osm2pgsql running under gunicorn
 Usage
 -----
     include_recipe 'osm2pgsql'
-
