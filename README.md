@@ -4,8 +4,7 @@ osm2pgsql Chef Cookbook
 
 Description
 -----------
-Installs osm2pgsql running under gunicorn
-* website: https://github.com/mapzen/chef-osm2pgsql.git
+Installs osm2pgsql
 
 Usage
 -----
