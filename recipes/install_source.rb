@@ -3,25 +3,13 @@
 # Recipe:: install_source
 #
 
-include_recipe 'git'
+include_recipe 'apt::default'
 include_recipe 'osm2pgsql::packages'
 
-bash 'build_osm2pgsql' do
-  action :nothing
-  cwd '/opt/osm2pgsql'
-  environment 'PREFIX' => node[:osm2pgsql][:source_install_prefix]
-  code <<-EOH
-    ./autogen.sh
-    ./configure --prefix=#{node[:osm2pgsql][:source_install_prefix]}
-    make -j "#{node[:cpu][:total]}" && make install
-  EOH
-  not_if "test -f #{node[:osm2pgsql][:source_install_prefix]}/bin/osm2pgsql"
-end
-
-git 'osm2pgsql' do
-  action      :sync
-  reference   'master'
-  repository  'https://github.com/openstreetmap/osm2pgsql.git'
-  destination '/opt/osm2pgsql'
-  notifies    :run, 'bash[build_osm2pgsql]', :immediately
+ark 'osm2pgsql' do
+  action      [:install_with_make]
+  url         node[:osm2pgsql][:url]
+  version     node[:osm2pgsql][:version]
+  owner       node[:osm2pgsql][:owner]
+  prefix_root node[:osm2pgsql][:prefix_root]
 end
