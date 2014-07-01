@@ -6,4 +6,8 @@ describe 'osm2pgsql::default' do
   it 'should include recipe osm2pgsql::install' do
     chef_run.should include_recipe 'osm2pgsql::install'
   end
+
+  it 'should include recipe apt::default' do
+    chef_run.should include_recipe 'apt::default'
+  end
 end

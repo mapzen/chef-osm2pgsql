@@ -3,7 +3,6 @@
 # Recipe:: install_source
 #
 
-include_recipe 'apt::default'
 include_recipe 'osm2pgsql::packages'
 
 ark 'osm2pgsql' do
