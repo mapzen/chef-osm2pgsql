@@ -22,12 +22,12 @@ include_recipe 'apt'
   end
 end
 
-if node[:platform_version] <= '12.04'
-  package 'proj' do
-    action:install
-  end
-else
-  package 'libproj-dev' do
-    action :install
-  end
+package 'proj' do
+  action :install
+  only_if { platform?('ubuntu') && node[:platform_version] <= '12.04' }
+end
+
+package 'libproj-dev' do
+  action :install
+  only_if { platform?('ubuntu') && node[:platform_version] > '12.04' }
 end
