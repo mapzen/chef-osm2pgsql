@@ -13,7 +13,7 @@ GRAPH
     7-zip (>= 0.0.0)
     windows (>= 0.0.0)
   chef_handler (1.1.6)
-  osm2pgsql (0.5.0)
+  osm2pgsql (0.5.2)
     apt (>= 0.0.0)
     ark (>= 0.0.0)
   windows (1.31.0)

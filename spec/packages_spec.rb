@@ -4,7 +4,7 @@ describe 'osm2pgsql::packages' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
 
   it 'should include recipe apt::default' do
-    chef_run.should include_recipe 'apt::default'
+    expect(chef_run).to include_recipe 'apt::default'
   end
 
   it 'should install supporting build packages' do
@@ -20,7 +20,7 @@ describe 'osm2pgsql::packages' do
       protobuf-c-compiler
       dh-make
     ).each do |pkg|
-      chef_run.should install_package pkg
+      expect(chef_run).to install_package pkg
     end
   end
 
@@ -28,7 +28,7 @@ describe 'osm2pgsql::packages' do
     let(:chef_run) { ChefSpec::Runner.new(platform: 'ubuntu', version: '12.04').converge(described_recipe) }
 
     it 'should install package proj' do
-      chef_run.should install_package 'proj'
+      expect(chef_run).to install_package 'proj'
     end
   end
 
@@ -36,7 +36,7 @@ describe 'osm2pgsql::packages' do
     let(:chef_run) { ChefSpec::Runner.new(platform: 'ubuntu', version: '13.04').converge(described_recipe) }
 
     it 'should install package libproj-dev' do
-      chef_run.should install_package 'libproj-dev'
+      expect(chef_run).to install_package 'libproj-dev'
     end
   end
 

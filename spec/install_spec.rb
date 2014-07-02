@@ -9,7 +9,7 @@ describe 'osm2pgsql::install' do
     end
 
     it 'should include recipe osm2pgsql::install_pkg' do
-      chef_run.should include_recipe 'osm2pgsql::install_pkg'
+      expect(chef_run).to include_recipe 'osm2pgsql::install_pkg'
     end
   end
 
@@ -21,7 +21,7 @@ describe 'osm2pgsql::install' do
     end
 
     it 'should include recipe osm2pgsql::install_source' do
-      chef_run.should include_recipe 'osm2pgsql::install_source'
+      expect(chef_run).to include_recipe 'osm2pgsql::install_source'
     end
   end
 
