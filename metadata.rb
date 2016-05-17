@@ -4,7 +4,7 @@ maintainer_email 'grant@mapzen.com'
 license          'GPL v3'
 description      'Installs/Configures osm2pgsql'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.5.2'
+version          '0.5.3'
 
 %w(apt ark).each do |dep|
   depends dep

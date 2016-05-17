@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.5.3
+-----
+* set download url based on version number
+
 0.5.2
 -----
 * clean up logic
