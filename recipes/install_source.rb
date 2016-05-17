@@ -11,4 +11,5 @@ ark 'osm2pgsql' do
   version     node[:osm2pgsql][:version]
   owner       node[:osm2pgsql][:owner]
   prefix_root node[:osm2pgsql][:prefix_root]
+  not_if      { ::File.exist?("#{node[:osm2pgsql][:prefix_root]}/osm2pgsql-#{node[:osm2pgsql][:version]}") }
 end
