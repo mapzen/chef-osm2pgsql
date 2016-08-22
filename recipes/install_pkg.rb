@@ -5,4 +5,6 @@
 
 include_recipe 'osm2pgsql::install_ppa' if node[:osm2pgsql][:ppa][:enabled]
 
-package 'osm2pgsql'
+package 'osm2pgsql' do
+  action node[:osm2pgsql][:upgrade] ? :upgrade : :install
+end
