@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.6.0
+-----
+* support package installation from ppa
+
 0.5.4
 -----
 * don't ark if we've already downloaded
